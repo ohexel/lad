@@ -1,0 +1,94 @@
+% Thank you
+% Esther Denecke: https://arxiv.org/abs/2302.01693
+% Athina Anastasiadou
+\documentclass[12pt, english]{article}
+%\documentclass[bibliography=totoc,english]{scrartcl}           
+
+\usepackage[T1]{fontenc}           
+\usepackage[utf8]{inputenc}      
+\usepackage[english]{babel}            
+
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    %letterpaper,
+	left=0.5in,
+	right=0.5in,
+	top=1in,
+	bottom=1in  
+}
+
+\usepackage[breaklinks,colorlinks,citecolor=black,linkcolor=magenta,urlcolor=blue]{hyperref}
+
+\usepackage{
+	amsfonts,  
+	amsmath,
+	amssymb, 
+	amsthm,
+    authblk,
+	booktabs,
+	enumitem,
+    lmodern,
+	longtable,  
+    %natbib,
+    setspace,
+	subcaption,                           
+	xcolor
+}
+
+\setlist[itemize]{noitemsep}
+\setlist[enumerate]{noitemsep}
+
+% If using package setspace
+\onehalfspacing                     
+
+% If using package natbib
+% \bibliographystyle{apalike}
+% \setcitestyle{authoryear,round,semicolon}
+
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+
+% bibliography
+\usepackage[
+	style			= apa,
+	citestyle		= authoryear,
+	firstinits,
+	hyperref		= true, 
+	natbib 			= false,
+	backref			= false, 
+	citetracker		= true, 
+	maxcitenames	= 2,
+	maxbibnames		= 99,
+	doi				= true, 
+	isbn			= false, 
+	useprefix		= false,
+	dashed 			= false,
+	uniquename 		= false,
+	backend=biber]{biblatex}
+	
+\bibliography{bib_file_here}
+
+% sorting names in bibliography:
+\DeclareNameAlias{sortname}{last-first} % Thanks (20230201): https://tex.stackexchange.com/questions/376714/author-name-and-first-name-order-with-biblatex
+
+\begin{document}                   
+	
+	\date{\today}
+	\title{Brilliant title}
+	\author[1]{Ole Hexel\thanks{Corresponding author: hexel@demogr.mpg.de}}
+	\affil[1]{\small{Department of Digital and Computational Demography, Max Planck Institute for Demographic Research, Rostock, Germany}}
+
+% Insert references
+% If using biblatex
+\printbibliography
+% If using natbib
+% \bibliography{bib_file_here}
+
+% Add appendices
+\clearpage
+\appendix
+\end{document}
